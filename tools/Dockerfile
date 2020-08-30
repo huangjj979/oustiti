@@ -6,4 +6,8 @@ COPY artifacts/outstiti /app
 
 RUN chmod +x /app/outstiti
 
+ARG ADDR
+
+ENV ADDR $ADDR
+
 ENTRYPOINT ["/app/outstiti"]
