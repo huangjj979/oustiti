@@ -1,2 +1,1 @@
-# A Golang Web Application Github Action Demo
-![Action](https://github.com/chfanghr/oustiti/workflows/Action/badge.svg)
+# A Golang Web Application Github Action Demo ![Action](https://github.com/chfanghr/oustiti/workflows/Action/badge.svg) ![docker version](https://img.shields.io/docker/v/chfanghr/outstiti?label=docker)
