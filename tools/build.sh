@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-echo "Hello World!"
-
-go version
+go build . -o artifacts/outstiti
