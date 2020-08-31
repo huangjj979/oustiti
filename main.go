@@ -36,5 +36,3 @@ func checkError(err error) {
 		log.Fatalln(err)
 	}
 }
-
-// Hello World
