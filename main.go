@@ -1,6 +1,8 @@
 package main
 
 import (
+	"github.com/chfanghr/oustiti/greeting"
+	"github.com/gin-gonic/gin"
 	"log"
 	"net"
 	"net/http"
@@ -10,9 +12,15 @@ import (
 var addr = os.Getenv("ADDR")
 
 func main() {
-	http.DefaultServeMux.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
-		_, _ = writer.Write([]byte("Hello world!"))
-		writer.WriteHeader(http.StatusOK)
+	router := gin.Default()
+
+	router.GET("/:name", func(context *gin.Context) {
+		name := context.Param("name")
+		context.String(http.StatusOK, greeting.Greet(name))
+	})
+
+	router.GET("/", func(context *gin.Context) {
+		context.String(http.StatusOK, "Hello World!")
 	})
 
 	listener, err := net.Listen("tcp", addr)
@@ -20,8 +28,7 @@ func main() {
 
 	log.Println("listening on", listener.Addr())
 
-	err = http.Serve(listener, http.DefaultServeMux)
-	checkError(err)
+	checkError(http.Serve(listener, router))
 }
 
 func checkError(err error) {
