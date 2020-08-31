@@ -28,3 +28,4 @@
     - `-o output` to specify output binary, for example `go build -o artifacts/outstiti .` builds an app binary, names it `outstiti` and saves it to `artifacts` directory
     - Why `-tags netgo` and  `export CGO_ENABLED=0`: our docker app is based on alpine linux, which doesn't have native net lib support. See this question: [Go-compiled binary won't run in an alpine docker container on Ubuntu host](https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host)
 * [`docker run`](https://docs.docker.com/engine/reference/run/)
+* [What is docker-compose](https://docs.docker.com/compose/)
