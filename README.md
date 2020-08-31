@@ -9,8 +9,13 @@
 ### Note
 * [What is dockerhub](https://docs.docker.com/docker-hub/)
     - In short, it's a service for hosting container images
+* [About how to configure github action](https://docs.github.com/en/actions/getting-started-with-github-actions)
 * Related github actions:
     - [actions/checkout](https://github.com/actions/checkout) is used to checkout our source code
     - [actions/setup-go](https://github.com/actions/setup-go) is used to add go tools to our build environment
     - [docker/build-push-action](https://github.com/docker/build-push-action) is used to build our app image and then push it to dockerhub 
-* Dockerhub credentials([username](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L22) and [password](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L23)) are stored using [github secret](https://docs.github.com/en/actions/configuring-and-managing-workflows/using-variables-and-secrets-in-a-workflow) 
+* Dockerhub credentials([username](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L22) and [password](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L23)) are stored using [github secret](https://docs.github.com/en/actions/configuring-and-managing-workflows/using-variables-and-secrets-in-a-workflow)
+* `go build` 
+    - `-v` to enable verbose log
+    - `-o output` to specify output binary, for example `go build -o artifacts/outstiti .` builds an app binary, names it `outstiti` and saves it to `artifacts` directory
+    - why `-tags netgo` and  `export CGO_ENABLED=0`: our docker app is based on alpine linux, which doesn't have native net lib support. See this question: [Go-compiled binary won't run in an alpine docker container on Ubuntu host](https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host)
