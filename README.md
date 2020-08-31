@@ -30,4 +30,3 @@
 * [`docker run`](https://docs.docker.com/engine/reference/run/)
 * Set environmental variable `ADDR` to make the example app run on specific address  
 * [What is docker-compose](https://docs.docker.com/compose/)
-<!--hello world-->
