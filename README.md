@@ -1,10 +1,18 @@
 # A Golang Web Application Template With Github Action  ![Action](https://github.com/chfanghr/oustiti/workflows/Action/badge.svg) ![docker version](https://img.shields.io/docker/v/chfanghr/outstiti?label=docker)
 
-## Build Workflow
+## Workflow
+
+### Build
 1. Build binary and run some tests (calling [build script](tools/build.sh) and [test script](tools/test.sh) from [Github action](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L14))
 2. Build docker image (using [docker build action](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L19) and [Dockerfile](tools/Dockerfile))
 3. Pushing docker image built in the previous process to [dockerhub](https://hub.docker.com/repository/docker/chfanghr/outstiti) (using [docker push action](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L23))
 4. Deploy docker image to the server using `docker pull; docker run ...`
+
+### Human who maintains the build system
+1. Configure the build system(github action scripts, build scripts, test scripts and so on)
+2. Make sure that app can be tested and built on the cloud
+3. Make sure that the app docker image is pushed to dockerhub per success build
+4. Deploy the docker image to the production server 
 
 ### Note
 * [What is dockerhub](https://docs.docker.com/docker-hub/)
