@@ -2,17 +2,16 @@
 
 ## Workflow
 
-### Build
+###  Build
 1. Build binary and run some tests (calling [build script](tools/build.sh) and [test script](tools/test.sh) from [Github action](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L14))
 2. Build docker image (using [docker build action](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L19) and [Dockerfile](tools/Dockerfile))
-3. Pushing docker image built in the previous process to [dockerhub](https://hub.docker.com/repository/docker/chfanghr/outstiti) (using [docker push action](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L23))
-4. Deploy docker image to the server using `docker pull; docker run ...`
+3. Pushing docker image built in the previous process to [dockerhub](https://hub.docker.com/repository/docker/chfanghr/outstiti) (using [docker push action](https://github.com/chfanghr/oustiti/blob/master/.github/workflows/action.yml#L23)
 
 ### Human who maintains the build system
-1. Configure the build system(github action scripts, build scripts, test scripts and so on)
-2. Make sure that app can be tested and built on the cloud
-3. Make sure that the app docker image is pushed to dockerhub per success build
-4. Deploy the docker image to the production server 
+* Configure the build system(github action scripts, build scripts, test scripts and so on)
+* Make sure that app can be tested and built on the cloud
+* Make sure that the app docker image is pushed to dockerhub per success build
+* Deploy the docker image to the production server 
 
 ### Note
 * [What is dockerhub](https://docs.docker.com/docker-hub/)
@@ -27,4 +26,5 @@
 * `go build` 
     - `-v` to enable verbose log
     - `-o output` to specify output binary, for example `go build -o artifacts/outstiti .` builds an app binary, names it `outstiti` and saves it to `artifacts` directory
-    - why `-tags netgo` and  `export CGO_ENABLED=0`: our docker app is based on alpine linux, which doesn't have native net lib support. See this question: [Go-compiled binary won't run in an alpine docker container on Ubuntu host](https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host)
+    - Why `-tags netgo` and  `export CGO_ENABLED=0`: our docker app is based on alpine linux, which doesn't have native net lib support. See this question: [Go-compiled binary won't run in an alpine docker container on Ubuntu host](https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host)
+* [`docker run`](https://docs.docker.com/engine/reference/run/)
