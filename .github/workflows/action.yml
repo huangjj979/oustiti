@@ -1,6 +1,8 @@
 name: Action
-on: push
-
+on:
+  push:
+    branches:
+      - '*'
 jobs:
   build_executable:
     runs-on: ubuntu-18.04
