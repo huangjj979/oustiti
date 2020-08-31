@@ -10,6 +10,7 @@
 * [What is dockerhub](https://docs.docker.com/docker-hub/)
     - In short, it's a service for hosting container images
 * [About how to configure github action](https://docs.github.com/en/actions/getting-started-with-github-actions)
+* [Commit message specification](https://gist.github.com/brianclements/841ea7bffdb01346392c) 
 * Related github actions:
     - [actions/checkout](https://github.com/actions/checkout) is used to checkout our source code
     - [actions/setup-go](https://github.com/actions/setup-go) is used to add go tools to our build environment
