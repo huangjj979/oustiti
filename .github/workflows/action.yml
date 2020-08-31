@@ -12,10 +12,10 @@ jobs:
 #      - uses: docker-practice/actions-setup-docker@master
       - run: mkdir artifacts
       - run: tools/build.sh
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build_results
-          path: artifacts
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: build_results
+#          path: artifacts
       - uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
