@@ -12,6 +12,7 @@ jobs:
 #      - uses: docker-practice/actions-setup-docker@master
       - run: mkdir artifacts
       - run: tools/build.sh
+      - run: tools/test.sh
 #      - uses: actions/upload-artifact@v2
 #        with:
 #          name: build_results
