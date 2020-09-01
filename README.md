@@ -29,4 +29,6 @@
     - Why `-tags netgo` and  `export CGO_ENABLED=0`: our docker app is based on alpine linux, which doesn't have native net lib support. See this question: [Go-compiled binary won't run in an alpine docker container on Ubuntu host](https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host)
 * [`docker run`](https://docs.docker.com/engine/reference/run/)
 * Set environmental variable `ADDR` to make the example app run on specific address  
-* [What is docker-compose](https://docs.docker.com/compose/)
+* [What is docker-compose](https://docs.docker.com/compose/
+<!--hello world-->
+)
